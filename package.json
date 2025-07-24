@@ -1,0 +1,28 @@
+{
+  "name": "devflow",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "hello": "./codegen-tool/index.js"
+  },
+  "scripts": {
+    "plop": "plop",
+    "plop:test": "pnpm run clean:test && cross-env GEN_OUTPUT_PATH=generated pnpm plop",
+    "clean:test": "node scripts/clean-output.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.13.1",
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "dotenv": "^17.2.0",
+    "plop": "^4.0.1"
+  },
+  "dependencies": {
+    "globby": "^14.1.0"
+  }
+}
