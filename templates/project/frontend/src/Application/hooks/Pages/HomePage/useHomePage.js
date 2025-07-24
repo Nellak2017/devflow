@@ -1,0 +1,1 @@
+export const useHomePage = () => ({ state: 'fill it in with your own state', services: { fixMe: () => console.log('TODO: add state and services to home page hook')}})
