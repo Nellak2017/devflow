@@ -5,7 +5,8 @@
   "main": "index.js",
   "type": "module",
   "bin": {
-    "hello": "./codegen-tool/index.js"
+    "devflow-init": "./codegen-tool/commands/devflow-init.js",
+    "devflow-gen": "./codegen-tool/commands/devflow-gen.js"
   },
   "scripts": {
     "plop": "plop",
@@ -21,8 +22,5 @@
     "cross-env": "^7.0.3",
     "dotenv": "^17.2.0",
     "plop": "^4.0.1"
-  },
-  "dependencies": {
-    "globby": "^14.1.0"
   }
 }
