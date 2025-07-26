@@ -8,7 +8,7 @@ export const Home = () => {
   const right = "TODO: implement right component"
   return (
     <>
-      <Nav slots={{ left, middle, right }} />
+      <Nav slots=\{{ left, middle, right }} />
       {/* Implement Body */}
       {/* Implement Footer */}
     </>
