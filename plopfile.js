@@ -1,13 +1,11 @@
 #!/usr/bin/env node
 import path from 'path'
-import os from 'os'
 import dotenv from 'dotenv'
 import installDependencies from "./scripts/install-script.js"
 
 dotenv.config() // loads .env into process.env
-const desktopPath = path.join(os.homedir(), 'Desktop')
-const destination = path.join(desktopPath, process.env.GEN_OUTPUT_PATH ?? '', '{{name}}')
-// const destination = path.join(process.cwd(), process.env.GEN_OUTPUT_PATH ?? '', '{{name}}') //: 'generated/{{name}}', works if relative
+const cwd = process.cwd() //path.join(os.homedir(), 'Desktop')
+const destination = path.join(cwd, process.env.GEN_OUTPUT_PATH ?? '', '{{name}}') //: 'generated/{{name}}', works if relative
 
 export const plopFunction = plop => {
   plop.setGenerator('multi', {
@@ -31,14 +29,12 @@ export const plopFunction = plop => {
       },
       async function installDeps(data) {
         const resolvedDestination = path.resolve(
-          desktopPath,
+          cwd,
           process.env.GEN_OUTPUT_PATH ?? '',
           data.name
         )
-
         console.log(`📦 Installing dependencies in: ${resolvedDestination}`)
         await installDependencies(resolvedDestination)
-
         return '✅ Dependencies installed'
       }
     ],

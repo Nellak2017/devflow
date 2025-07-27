@@ -7,7 +7,7 @@ import { Logo, SiteTitle, LoginContainer, StyledNav, ContentContainer } from './
 // The below Components are the default components for Nav that can be customized
 export const LeftContent = ({
     state: {
-        href = '/', logoPath = { src: '/Plan-Weave-Logo-Square.png' }, alt = 'Plan Weave Logo', tabIndex = 0, title = 'Organize your tasks with Plan Weave',
+        href = '/', logoPath = { src: '/{{name}}-Logo.png' }, alt = '{{name}} Logo', tabIndex = 0, title = 'TODO: Update title for {{name}} app in the nav',
         dimensions: { width = 64, height = 61 } = {},
     } = {}
 }) => (
@@ -15,15 +15,15 @@ export const LeftContent = ({
         <Link href={href} tabIndex={tabIndex}><Image src={logoPath.src} alt={alt} width={width} height={height} title={title} aria-label={title} /></Link>
     </Logo>
 )
-export const MiddleContent = ({ state: { label = 'Plan Weave', href = '/plan-weave', tabIndex = 0, title = 'Go to Plan Weave App' } = {} }) => (
+export const MiddleContent = ({ state: { label = '{{name}}', href = '/{{name}}', tabIndex = 0, title = 'Go to {{name}} App' } = {} }) => (
     <SiteTitle><Link href={href} tabIndex={tabIndex} title={title} aria-label={title}>{label}</Link></SiteTitle>
 )
 export const RightContent = ({
     state: {
         prevComponent = <></>,
         linkData = [
-            { label: 'App', href: '/plan-weave', title: 'Go to Plan Weave App', onClick: null },
-            { label: 'Log in', href: '/login', title: 'Log into PlanWeave App', onClick: null },
+            { label: 'App', href: '/{{name}}', title: 'Go to {{name}} App', onClick: null },
+            { label: 'Log in', href: '/login', title: 'Log into {{name}} App', onClick: null },
         ],
         lastButtonData = { label: 'Sign Up', href: '/signup', title: 'Sign up', onClick: null },
         postComponent = <></>,
