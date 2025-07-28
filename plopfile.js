@@ -14,8 +14,8 @@ export const plopFunction = plop => {
       {
         type: 'input',
         name: 'name',
-        message: 'What is your folder name?',
-        default: 'my-folder',
+        message: 'What is your project name?',
+        default: 'my-project',
       },
     ],
     actions: [
